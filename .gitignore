@@ -1,0 +1,9 @@
+.classpath
+*.html
+.project
+.DS_Store
+.settings/
+target/
+test-output/
+.idea/
+.settings/

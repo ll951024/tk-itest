@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="bss_bvt_testsuite" verbose="1" parallel="false">
+    <test name="bss_bvt_test">
+        <groups>
+            <run>
+                <include name="lb" />
+            </run>
+        </groups>
+
+        <packages>
+            <package name="com.cy.test.longbit.bvt.lb.*" />
+        </packages>
+    </test>
+
+</suite>

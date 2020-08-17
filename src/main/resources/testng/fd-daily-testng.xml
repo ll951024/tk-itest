@@ -1,0 +1,7 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="fd_daily_testsuite" verbose="1" parallel="false">
+	<suite-files >
+        <suite-file path="lb-daily-testng.xml"></suite-file>
+
+    </suite-files>
+</suite>

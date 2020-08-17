@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:int="http://www.springframework.org/schema/integration"
+               xmlns:int-kafka="http://www.springframework.org/schema/integration/kafka"
+               xsi:schemaLocation="http://www.springframework.org/schema/integration/kafka http://www.springframework.org/schema/integration/kafka/spring-integration-kafka.xsd
+        http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- LBDatasource -->
+<bean id="lbDatasource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="${lb.jdbc.driver}"/>
+    <property name="url" value="${lb.jdbc.url}"/>
+    <property name="username" value="${username}"/>
+    <property name="password" value="${password}"/>
+    <!--maxActive: 最大连接数量-->
+    <property name="maxActive" value="10"/>
+    <!--minIdle: 最小空闲连接-->
+    <property name="minIdle" value="5"/>
+    <!--maxIdle: 最大空闲连接-->
+    <property name="maxIdle" value="10"/>
+    <!--initialSize: 初始化连接-->
+    <property name="initialSize" value="10"/>
+</bean>
+</beans>
