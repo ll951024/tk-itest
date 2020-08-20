@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="bss_daily_testsuite" verbose="1" parallel="false">
-    <test name="bss_daily_test">
+<suite name="lb_daily_testsuite" verbose="1" parallel="false">
+    <test name="lb_daily_test">
         <groups>
             <run>
                 <include name="lb" />

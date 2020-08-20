@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cy-itest</groupId>
-    <artifactId>cy-itest</artifactId>
+    <groupId>tk-itest</groupId>
+    <artifactId>tk-itest</artifactId>
     <version>1.0.0</version>
-    <name>cy-itest</name>
+    <name>tk-itest</name>
     <description>cy api test</description>
     <url>http://maven.apache.org</url>
 
@@ -299,20 +299,25 @@
         <defaultGoal>compile</defaultGoal>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                </configuration>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.9.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.maven.plugins}</version>
                 <configuration>
-                    <source>${version.jdk}</source>
-                    <target>${version.jdk}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
+                    <showWarnings>true</showWarnings>
                 </configuration>
             </plugin>
             <plugin>
@@ -325,7 +330,7 @@
                     <parallel>false</parallel>
                     <forkMode>once</forkMode>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/main/resources/testng/${run}-${runtype}-testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/main/resources/testng/lb-daily-testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <properties>
                         <property>
@@ -334,7 +339,7 @@
                         </property>
                         <property>
                             <name>listener</name>
-                            <value>org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter,com.cy.test.common.ExtentTestNGIReporter,com.cy.test.common.CyTestNGReporter</value>
+                            <value>org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter,com.cy.test.common.ExtentTestNGIReporter</value>
                         </property>
                     </properties>
                     <workingDirectory>target/</workingDirectory>
